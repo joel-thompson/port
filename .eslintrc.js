@@ -1,13 +1,13 @@
 module.exports = {
   extends: [
     // 'airbnb-typescript',
+    // 'import',
+    // 'plugin:prettier/recommended',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
-    'plugin:prettier/recommended',
-    // 'import',
   ],
-  plugins: ['react', '@typescript-eslint', 'jest', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'react-hooks', 'prettier'],
   env: {
     browser: true,
     es6: true,
@@ -32,18 +32,18 @@ module.exports = {
     },
   ],
   rules: {
+    // 'prettier/prettier': [
+    //   'warn',
+    //   {
+    //     endOfLine: 'auto',
+    //   },
+    // ],
     'linebreak-style': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'no-console': 'error',
+    'no-console': 'warn',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
   },
