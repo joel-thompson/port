@@ -5,9 +5,6 @@ workflows:
   push:
     jobs:
       - react/install
-      - react/lint:
-          requires:
-            - react/install
       - react/test:
           requires:
             - react/install
