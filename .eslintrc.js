@@ -39,6 +39,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
