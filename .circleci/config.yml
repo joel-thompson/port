@@ -15,10 +15,8 @@ workflows:
 jobs:
   linting:
     docker:
-      - image: circleci/command-convenience:0.1
-        auth:
-          username: $DOCKER_HUB_USER
-          password: $DOCKER_HUB_PASSWORD
+      - image: circleci/node:10
+
     steps:
       - checkout
       - run: yarn eslint src/**/*.ts{,x} --max-warnings=0 --format junit
