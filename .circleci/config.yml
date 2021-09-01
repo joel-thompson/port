@@ -8,9 +8,12 @@ workflows:
       - react/test:
           requires:
             - react/install
+      - linting:
+          requires:
+            - react/install
 
 jobs:
-  delete-canary:
+  linting:
     docker:
       - image: circleci/command-convenience:0.1
         auth:
