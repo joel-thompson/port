@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // work properly.
 
 export default function App() {
+  const foo = 'f';
   return (
     <Router>
       <div>
