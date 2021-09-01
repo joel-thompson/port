@@ -8,3 +8,16 @@ workflows:
       - react/test:
           requires:
             - react/install
+      - linting:
+          requires:
+            - react/install
+
+jobs:
+  linting:
+    docker:
+      - image: circleci/node:12.22.5
+
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn eslint src/**/*.ts{,x} --max-warnings=0
