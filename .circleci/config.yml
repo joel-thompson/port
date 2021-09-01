@@ -20,4 +20,4 @@ jobs:
     steps:
       - checkout
       - run: yarn install
-      - run: yarn eslint src/**/*.ts{,x} --max-warnings=0 --format junit --output-file ./reports/eslint/eslint.xml
+      - run: yarn eslint src/**/*.ts{,x} --max-warnings=0
