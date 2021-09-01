@@ -1,10 +1,11 @@
 module.exports = {
   extends: [
-    'airbnb-typescript',
+    // 'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
+    // 'import',
   ],
   plugins: ['react', '@typescript-eslint', 'jest', 'react-hooks'],
   env: {
@@ -38,5 +39,11 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_' }],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'no-console': 'error',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
   },
 };

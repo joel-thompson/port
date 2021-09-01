@@ -11,14 +11,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // work properly.
 
 export default function App() {
-  const bar = 'f';
-
-  if (bar === 'fi') {
-    React.useEffect(() => {
-      'f';
-    }, []);
-  }
-
   return (
     <Router>
       <div>
