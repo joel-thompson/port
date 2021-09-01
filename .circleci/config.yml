@@ -8,5 +8,14 @@ workflows:
       - react/test:
           requires:
             - react/install
-          steps:
-            - run: yarn eslint src/**/*.ts{,x} --max-warnings=0 --format junit
+
+jobs:
+  delete-canary:
+    docker:
+      - image: circleci/command-convenience:0.1
+        auth:
+          username: $DOCKER_HUB_USER
+          password: $DOCKER_HUB_PASSWORD
+    steps:
+      - checkout
+      - run: yarn eslint src/**/*.ts{,x} --max-warnings=0 --format junit
