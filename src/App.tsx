@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import styled from '@emotion/styled';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -9,6 +10,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 // through the site. This preserves the browser history,
 // making sure things like the back button and bookmarks
 // work properly.
+
+const SomeComp = styled.div({
+  backgroundColor: 'hotpink',
+
+  ':hover': {
+    backgroundColor: 'lightblue',
+  },
+});
 
 export default function App() {
   return (
@@ -56,9 +65,9 @@ export default function App() {
 
 function Home() {
   return (
-    <div>
+    <SomeComp>
       <h2>Hello</h2>
-    </div>
+    </SomeComp>
   );
 }
 
