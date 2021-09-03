@@ -16,16 +16,14 @@ import Home from './Home';
 export default function App() {
   return (
     <Router>
-      <div>
-        <TopNav />
+      <TopNav />
 
-        <hr data-testid="topnav-separation" />
+      <hr data-testid="topnav-separation" />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/bikes" component={Bikes} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/bikes" component={Bikes} />
+      </Switch>
     </Router>
   );
 }
