@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders topnav separation hr', () => {
   render(<App />);
-  const linkElement = screen.getByText('Hello');
-  expect(linkElement).toBeInTheDocument();
+  const hrElement = screen.getByTestId('topnav-separation');
+  expect(hrElement).toBeInTheDocument();
 });

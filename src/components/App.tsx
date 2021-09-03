@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import styled from '@emotion/styled';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import TopNav from './TopNav';
+import Bikes from './Bikes';
+import Home from './Home';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -11,78 +13,19 @@ import styled from '@emotion/styled';
 // making sure things like the back button and bookmarks
 // work properly.
 
-const SomeComp = styled.div({
-  backgroundColor: 'hotpink',
-
-  ':hover': {
-    backgroundColor: 'lightblue',
-  },
-});
-
 export default function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
+        <TopNav />
 
-        <hr />
+        <hr data-testid="topnav-separation" />
 
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route path="/bikes" component={Bikes} />
         </Switch>
       </div>
     </Router>
-  );
-}
-
-// You can think of these components as "pages"
-// in your app.
-
-function Home() {
-  return (
-    <SomeComp>
-      <h2>Hello</h2>
-    </SomeComp>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
   );
 }
