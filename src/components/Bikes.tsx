@@ -1,11 +1,6 @@
 import { Box, Button } from '@chakra-ui/react';
 import { GiAmericanShield } from 'react-icons/gi';
 
-// function showMessage(message = 'go ride you fool') {
-//   alert(message);
-//   // return undefined;
-// }
-
 const showMessage = (message = 'go ride you fool') => {
   alert(message);
 };
