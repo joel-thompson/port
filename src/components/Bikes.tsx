@@ -8,7 +8,7 @@ const showMessage = (message = 'go ride you fool') => {
 export default function Bikes() {
   return (
     <>
-      <h2>Bikes are funs</h2>
+      <h2>Bikes are fun</h2>
       <Box
         _hover={{ backgroundColor: 'green.400' }}
         bg={'blue.400'}
