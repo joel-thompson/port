@@ -5,24 +5,30 @@ const showMessage = (message = 'go ride you fool') => {
   alert(message);
 };
 
+const BikeBox = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <Box
+      _hover={{ backgroundColor: 'green.400' }}
+      bg={'blue.400'}
+      w={300}
+      h={400}
+      mb={20}
+      mt={4}
+    >
+      {children}
+    </Box>
+  );
+};
+
 export default function Bikes() {
   return (
     <>
       <h2>Bikes are fun</h2>
-      <Box
-        _hover={{ backgroundColor: 'green.400' }}
-        bg={'blue.400'}
-        w={300}
-        h={400}
-        mb={20}
-        mt={4}
-      >
-        Hello
-      </Box>
+      <BikeBox>Hello</BikeBox>
       <Button
         leftIcon={<GiAmericanShield />}
         onClick={() => {
-          showMessage('foo');
+          showMessage("No, I don't think I will");
         }}
         size="lg"
         colorScheme="blue"
