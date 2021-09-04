@@ -26,6 +26,7 @@ export default function Bikes() {
       <h2>Bikes are fun</h2>
       <BikeBox>Hello</BikeBox>
       <Button
+        ml={2}
         leftIcon={<GiAmericanShield />}
         onClick={() => {
           showMessage("No, I don't think I will");
