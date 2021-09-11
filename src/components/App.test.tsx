@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders topnav separation hr', () => {
   render(<App />);
-  const hrElement = screen.getByTestId('topnav-separation');
+  const hrElement = screen.getByTestId('app-topnav-separation');
   expect(hrElement).toBeInTheDocument();
 });
