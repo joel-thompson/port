@@ -21,3 +21,5 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn eslint src/**/*.ts{,x} --max-warnings=0
+      - store_test_results:
+          path: "f"
