@@ -22,4 +22,4 @@ jobs:
       - run: yarn install
       - run: yarn eslint src/**/*.ts{,x} --max-warnings=0
       - store_test_results:
-          path: "f"
+          path: "reports/junit/js-test-results.xml" 
