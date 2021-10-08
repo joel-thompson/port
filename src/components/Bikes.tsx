@@ -1,16 +1,6 @@
-import {
-  Box,
-  Button,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  Heading,
-} from '@chakra-ui/react';
-import React from 'react';
-
-import { GiAmericanShield } from 'react-icons/gi';
+import { Heading, Divider, Text } from '@chakra-ui/react';
+import { Link, Route, Switch } from 'react-router-dom';
+import FrontRearCenterCalculator from './bikes/FrontRearCenterCalculator';
 
 // const BikeBox = ({ children }: { children: React.ReactNode }) => {
 //   return (
@@ -28,48 +18,27 @@ import { GiAmericanShield } from 'react-icons/gi';
 // };
 
 export default function Bikes() {
-  const [wheelbase, setWheelbase] = React.useState(0);
-  const [chainstay, setChainstay] = React.useState(0);
   return (
     <>
-      <Heading>Front center / rear center ratio calculator</Heading>
-      <p>Wheelbase</p>
-      <NumberInput
-        size="sm"
-        min={0}
-        defaultValue={0}
-        onChange={(value) => {
-          setWheelbase(parseInt(value));
-        }}
-      >
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
-      </NumberInput>
+      <Heading>Bikes are fun</Heading>
+      <Divider mb="5" />
 
-      <p>Rear center / chainstay</p>
-      <NumberInput
-        size="sm"
-        min={0}
-        defaultValue={0}
-        onChange={(value) => {
-          setChainstay(parseInt(value));
-        }}
-      >
-        <NumberInputField />
-        <NumberInputStepper>
-          <NumberIncrementStepper />
-          <NumberDecrementStepper />
-        </NumberInputStepper>
-      </NumberInput>
-
+      <Link to={'/bikes'}>bikes home</Link>
       <br />
-      <p>front center: {wheelbase - chainstay}</p>
-      <p>
-        front center / rear center ratio: {(wheelbase - chainstay) / chainstay}
-      </p>
+
+      <Link to={'/bikes/fs-rs-calculator'}>fs-rs-calculator</Link>
+
+      <Divider mt="5" mb="10" />
+
+      <Switch>
+        <Route exact path="/bikes">
+          <Text fontSize="lg">Choose a page</Text>
+        </Route>
+        <Route
+          path="/bikes/fs-rs-calculator"
+          component={FrontRearCenterCalculator}
+        />
+      </Switch>
     </>
   );
 }
