@@ -17,8 +17,8 @@ export default function FrontRearCenterCalculator({
   const [wheelbase, setWheelbase] = React.useState(0);
   const [chainstay, setChainstay] = React.useState(0);
   return (
-    <Container>
-      <Text fontSize="lg" mb="5">
+    <Container display="flex" flexDirection="column">
+      <Text alignSelf="center" fontSize="lg" mb="5">
         {label}
       </Text>
       <p>Wheelbase</p>
@@ -55,7 +55,8 @@ export default function FrontRearCenterCalculator({
 
       <Text mt="5">front center: {wheelbase - chainstay}</Text>
       <Text>
-        front center / rear center ratio: {(wheelbase - chainstay) / chainstay}
+        front center / rear center ratio:{' '}
+        {chainstay > 0 ? (wheelbase - chainstay) / chainstay : 'n/a'}
       </Text>
     </Container>
   );

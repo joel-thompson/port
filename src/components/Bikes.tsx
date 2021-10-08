@@ -1,6 +1,6 @@
 import { Heading, Divider, Text } from '@chakra-ui/react';
 import { Link, Route, Switch } from 'react-router-dom';
-import FrontRearCenterCalculator from './bikes/FrontRearCenterCalculator';
+import MultiFrontRearCenterCalculator from './bikes/MultiFrontRearCenterCalculator';
 
 // const BikeBox = ({ children }: { children: React.ReactNode }) => {
 //   return (
@@ -25,7 +25,6 @@ export default function Bikes() {
 
       <Link to={'/bikes'}>bikes home</Link>
       <br />
-
       <Link to={'/bikes/fs-rs-calculator'}>fs-rs-calculator</Link>
 
       <Divider mt="5" mb="10" />
@@ -36,7 +35,7 @@ export default function Bikes() {
         </Route>
         <Route
           path="/bikes/fs-rs-calculator"
-          component={FrontRearCenterCalculator}
+          component={MultiFrontRearCenterCalculator}
         />
       </Switch>
     </>
