@@ -13,11 +13,12 @@ export default function Home() {
   return (
     <>
       <Grid
-        w="72"
+        w="auto"
         h="72"
         templateColumns="repeat(2, 1fr)"
         templateRows="repeat(2, 1fr) 2fr"
-        gap="1"
+        gridColumnGap="30px"
+        gridRowGap="20px"
       >
         <GridItem bg="blue.500" _hover={{ backgroundColor: 'blue.200' }} />
         <GridItem bg="red.500" _hover={{ backgroundColor: 'red.200' }} />
