@@ -4,6 +4,7 @@ import TopNav from './TopNav';
 import Bikes from './Bikes';
 import Home from './Home';
 import Resume from './Resume';
+import { Box } from '@chakra-ui/react';
 
 export default function App() {
   return (
@@ -13,9 +14,11 @@ export default function App() {
       <br data-testid="app-topnav-separation" />
 
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/bikes" component={Bikes} />
+        <Box m="2">
+          <Route exact path="/" component={Home} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/bikes" component={Bikes} />
+        </Box>
       </Switch>
     </Router>
   );
