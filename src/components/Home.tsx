@@ -13,9 +13,10 @@ export default function Home() {
   return (
     <>
       <Grid
-        w="60"
-        templateColumns="repeat(2, 50px)"
-        templateRows="repeat(2, 50px) 100px"
+        w="72"
+        h="72"
+        templateColumns="repeat(2, 1fr)"
+        templateRows="repeat(2, 1fr) 2fr"
         gap="1"
       >
         <GridItem bg="blue.500" _hover={{ backgroundColor: 'blue.200' }} />
