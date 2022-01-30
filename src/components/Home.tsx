@@ -15,28 +15,38 @@ export default function Home() {
       <Grid
         w="auto"
         h="96"
-        templateColumns="[start] repeat(2, 1fr) [mid] repeat(2, 1fr) [end]"
-        templateRows="[start] repeat(2, 1fr) 2fr 2fr [last]"
+        templateColumns="50px 1fr 1fr 1fr 1fr"
+        templateRows="1fr 1fr 2fr 2fr "
+        templateAreas={`
+               'nav . . . .'
+               'nav . . . .'
+               'nav . . . .'
+               '. . . . .'`}
         gridColumnGap="30px"
         gridRowGap="20px"
       >
         <GridItem
-          gridColumn="start / mid"
+          gridArea="nav"
+          bg="yellow.500"
+          _hover={{ backgroundColor: 'yellow.200' }}
+        />
+        <GridItem
+          gridColumn="span 2"
           bg="blue.500"
           _hover={{ backgroundColor: 'blue.200' }}
         />
         <GridItem
-          gridColumn="mid / end"
+          gridColumn="span 2"
           bg="red.500"
           _hover={{ backgroundColor: 'red.200' }}
         />
         <GridItem
-          gridColumn="start / mid"
+          gridColumn="span 2"
           bg="green.500"
           _hover={{ backgroundColor: 'green.200' }}
         />
         <GridItem
-          gridColumn="mid / end"
+          gridColumn="span 2"
           bg="purple.500"
           _hover={{ backgroundColor: 'purple.200' }}
         />
@@ -44,7 +54,7 @@ export default function Home() {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          gridColumn="start / end"
+          gridColumn="span 4"
           bg="yellow.500"
           _hover={{ outline: 'solid', outlineColor: 'purple.200' }}
         >
@@ -53,8 +63,7 @@ export default function Home() {
           </Text>
         </GridItem>
         <GridItem
-          gridRowEnd="last"
-          gridColumn="2 / span 2"
+          gridArea="auto / 3 / auto / 5"
           bg="yellowgreen"
           _hover={{ outline: 'dashed', outlineColor: 'purple.200' }}
         />
