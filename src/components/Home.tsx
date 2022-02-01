@@ -16,12 +16,12 @@ export default function Home() {
         w="auto"
         h="96"
         templateColumns="50px 1fr 1fr 1fr 1fr"
-        templateRows="1fr 1fr 2fr 2fr "
+        templateRows="1fr 1fr minmax(50px, auto) 2fr "
         templateAreas={`
                'nav . . . .'
                'nav . . . .'
                'nav . . . .'
-               '. . . . .'`}
+               '. . bottombar bottombar .'`}
         gridColumnGap="30px"
         gridRowGap="20px"
       >
@@ -63,7 +63,7 @@ export default function Home() {
           </Text>
         </GridItem>
         <GridItem
-          gridArea="auto / 3 / auto / 5"
+          gridArea="bottombar"
           bg="yellowgreen"
           _hover={{ outline: 'dashed', outlineColor: 'purple.200' }}
         />
