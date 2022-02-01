@@ -15,13 +15,13 @@ export default function Home() {
       <Grid
         w="auto"
         h="96"
-        templateColumns="50px 1fr 1fr 1fr 1fr"
-        templateRows="1fr 1fr minmax(50px, auto) 2fr "
-        templateAreas={`
-               'nav . . . .'
-               'nav . . . .'
-               'nav . . . .'
-               '. . bottombar bottombar .'`}
+        gridTemplate={`
+          'nav . . . .' 1fr
+          'nav . . . .' 1fr
+          'nav . . . .' minmax(50px, auto)
+          '. . bottombar bottombar .' 2fr
+          / 50px 1fr 1fr 1fr 1fr
+        `}
         gridColumnGap="30px"
         gridRowGap="20px"
       >
