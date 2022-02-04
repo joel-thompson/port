@@ -24,6 +24,7 @@ export default function Home() {
                '. . bottombar bottombar .'`}
         gridColumnGap="30px"
         gridRowGap="20px"
+        gridAutoRows="50px"
       >
         <GridItem
           gridArea="nav"
@@ -65,6 +66,12 @@ export default function Home() {
         <GridItem
           gridArea="bottombar"
           bg="yellowgreen"
+          _hover={{ outline: 'dashed', outlineColor: 'purple.200' }}
+        />
+        <GridItem
+          gridColumn="span 5"
+          gridRowEnd="7"
+          bg="black"
           _hover={{ outline: 'dashed', outlineColor: 'purple.200' }}
         />
       </Grid>
