@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import TopNav from './TopNav';
-import Bikes from './Bikes';
-import Home from './Home';
-import Resume from './Resume';
+import TopNav from './components/TopNav';
+import Bikes from './components/Bikes';
+import Home from './components/Home';
+import Resume from './components/Resume';
 import { Box } from '@chakra-ui/react';
 
 export default function App() {
