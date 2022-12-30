@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TopNav from './components/TopNav';
 import Bikes from './components/Bikes';
 import Home from './components/Home';
-import Resume from './components/Resume';
+import Resume from './components/resume/Resume';
 import { Box } from '@chakra-ui/react';
 
 export default function App() {
