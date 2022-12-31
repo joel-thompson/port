@@ -1,5 +1,6 @@
 export const resumeData: Resume = {
   name: 'Joel Thompson',
+  education: 'B.S. in Computer Engineering  - UC Santa Cruz, Jack Baskin School of Engineering',
   jobHistory: [
     {
       company: 'CircleCI',
@@ -14,9 +15,9 @@ export const resumeData: Resume = {
     },
     {
       company: 'Intercom',
-      title: 'Software Engineer',
+      title: 'Product Engineer',
       time: '2016 - 2020',
-      responsibilities: ['Typed on a computer'],
+      responsibilities: ['Typed on a computer', "Planned and implemented our team's part of a major pricing model product update. This involved working with multiple teams in engineering, marketing, and design."],
     },
   ],
   strengths: [
@@ -27,18 +28,23 @@ export const resumeData: Resume = {
 
 interface Resume {
   name: string;
-  jobHistory: Job[];
-  strengths: Strength[];
+  education: string;
+  jobHistory: JobHistory;
+  strengths: Strengths;
 }
 
-export interface Job {
+interface Job {
   company: string;
   title: string;
   time: string;
   responsibilities: string[];
 }
 
-export interface Strength {
+type JobHistory = Job[];
+
+interface Strength {
   name: string;
   items: string[];
 }
+
+type Strengths = Strength[];

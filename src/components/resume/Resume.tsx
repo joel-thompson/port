@@ -1,63 +1,66 @@
 import {
   Box,
-  Card,
   Divider,
   Heading,
-  HStack,
   ListItem,
-  StackDivider,
   UnorderedList,
   VStack,
   Text,
   Stack,
 } from '@chakra-ui/react';
-import { resumeData, Job, Strength } from './resumeData';
+import { resumeData } from './resumeData';
 
 export default function Home() {
   return (
-    <VStack spacing="2" align="flex-start">
-      <Heading>{resumeData.name}</Heading>
+    <VStack spacing="2" align="flex-start" maxW="3xl">
+      <Heading fontSize="2xl">{resumeData.name}</Heading>
 
       <Divider />
-      <Text>Experience</Text>
+      <Heading fontSize="lg">Education</Heading>
+      <Text fontSize="sm">{resumeData.education}</Text>
+
+      <Divider />
+      <Heading fontSize="lg">Experience</Heading>
       {resumeData.jobHistory.map((job) => (
-        <ShowJob job={job} />
+        <ListCard
+          heading={job.company}
+          subtitle={`${job.title} / ${job.time}`}
+          list={job.responsibilities}
+        />
       ))}
 
       <Divider />
-      <Text>Strengths</Text>
+      <Heading fontSize="lg">Strengths</Heading>
       {resumeData.strengths.map((strength) => (
-        <ShowStrength strength={strength} />
+        <ListCard heading={strength.name} list={strength.items} />
       ))}
     </VStack>
   );
 }
 
-const ShowJob = ({ job }: { job: Job }) => {
+const ListCard = ({
+  heading,
+  subtitle,
+  list,
+}: {
+  heading: string;
+  subtitle?: string;
+  list: string[];
+}) => {
   return (
-    <Stack direction="row" borderWidth="1px" shadow="sm">
-      <Box p={5} w="60">
-        <Heading fontSize="xl">{job.company}</Heading>
-        <Text>{job.title}</Text>
-        <Text>{job.time}</Text>
+    <Stack direction="column" borderWidth="1px" shadow="sm" w="full">
+      <Box p={2} w="100%">
+        <Heading fontSize="sm">{heading}</Heading>
+        {subtitle && <Text fontSize="sm">{subtitle}</Text>}
       </Box>
 
-      <Box p={5}>
+      <Box p={2} pt="0px">
         <UnorderedList>
-          {job.responsibilities.map((r) => (
-            <ListItem>{r}</ListItem>
+          {list.map((i) => (
+            <ListItem fontSize="sm">{i}</ListItem>
           ))}
         </UnorderedList>
       </Box>
     </Stack>
-  );
-};
-
-const ShowStrength = ({ strength }: { strength: Strength }) => {
-  return (
-    <>
-      <Text>{strength.name}</Text>
-      {strength.items.map((i) => <Text>{i}</Text>)}
-    </>
   );
 };
