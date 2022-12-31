@@ -15,12 +15,10 @@ export default function Home() {
     <VStack spacing="2" align="flex-start" maxW="3xl">
       <Heading fontSize="2xl">{resumeData.name}</Heading>
 
-      <Divider />
-      <Heading fontSize="lg">Education</Heading>
+      <DividerHeading>Education</DividerHeading>
       <Text fontSize="sm">{resumeData.education}</Text>
 
-      <Divider />
-      <Heading fontSize="lg">Experience</Heading>
+      <DividerHeading>Experience</DividerHeading>
       {resumeData.jobHistory.map((job) => (
         <ListCard
           heading={job.company}
@@ -29,12 +27,20 @@ export default function Home() {
         />
       ))}
 
-      <Divider />
-      <Heading fontSize="lg">Strengths</Heading>
+      <DividerHeading>Strengths</DividerHeading>
       {resumeData.strengths.map((strength) => (
         <ListCard heading={strength.name} list={strength.items} />
       ))}
     </VStack>
+  );
+}
+
+const DividerHeading = ({children}: {children: string}) => {
+  return (
+    <>
+      <Divider />
+      <Heading fontSize="lg">{children}</Heading>
+    </>
   );
 }
 
